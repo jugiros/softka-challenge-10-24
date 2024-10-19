@@ -1,13 +1,15 @@
 import {Component, OnInit} from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterOutlet } from '@angular/router';
+import {ToastComponent} from "./components/common/toast/toast.component";
 import {ToastService} from "./services/common/toast.service";
+import {ConfirmationModalComponent} from "./components/common/confirmation-modal/confirmation-modal.component";
 import {ModalService} from "./services/common/modal.service";
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [CommonModule, RouterOutlet],
+  imports: [CommonModule, RouterOutlet, ToastComponent, ConfirmationModalComponent],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css'
 })

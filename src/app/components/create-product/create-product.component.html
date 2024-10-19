@@ -83,14 +83,14 @@
         </span>
       </div>
       <div class="form-group">
-        <label for="date_revision">Fecha de Reestructuración</label>
+        <label for="date_revision">Fecha de Revisión</label>
         <input id="date_revision" formControlName="date_revision" type="date"
                [ngClass]="{'invalid': form.get('date_revision')?.invalid && form.get('date_revision')?.touched}"
                [attr.min]="minDateRevision"
         />
         <span class="text-danger"
               *ngIf="form.get('date_revision')?.touched && (form.get('date_revision')?.hasError('required'))">
-          <span>La fecha de reestructuración es requerida</span>
+          <span>La fecha de revisión es requerida</span>
         </span>
       </div>
     </div>

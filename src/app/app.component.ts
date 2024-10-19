@@ -14,7 +14,7 @@ import {ModalService} from "./services/common/modal.service";
   styleUrl: './app.component.css'
 })
 export class AppComponent implements OnInit {
-  title = 'challenge';
+  title = 'softka-challenge-10-24';
 
   toast: { message: string, type: 'success' | 'error' | 'warning' } | null = null;
   showModal = false;

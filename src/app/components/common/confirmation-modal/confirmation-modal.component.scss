@@ -1,0 +1,66 @@
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.modal-content {
+  background-color: white;
+  padding: 20px;
+  border-radius: 5px;
+  width: 300px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  position: relative;
+}
+
+.btn-action {
+  font-size: 12px;
+  font-weight: bold;
+  height: 40px;
+  min-width: 70px;
+  border-radius: 5px;
+  border: none;
+}
+
+.button-container {
+  display: flex;
+  gap: 10px;
+  margin-top: 20px;
+}
+
+.btn-confirm, .btn-cancel {
+  flex: 1;
+  padding: 10px;
+  cursor: pointer;
+}
+
+.btn-confirm {
+  @extend .btn-action;
+  background-color: var(--dark-yellow);
+  cursor: pointer;
+  color: var(--text-gray);
+
+  &:hover {
+    background-color: var(--light-yellow);
+  }
+}
+
+.btn-cancel {
+  @extend .btn-action;
+  background-color: var(--light-gray);
+  color: var(--text-gray);
+
+  &:hover {
+    background-color: var(--hover-gray);
+  }
+}
+
+.p-modal {
+  margin-bottom: 70px;
+}

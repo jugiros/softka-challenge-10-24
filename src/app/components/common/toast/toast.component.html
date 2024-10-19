@@ -1,0 +1,4 @@
+<div *ngIf="show" class="toast" [ngClass]="{'success': type === 'success', 'error': type === 'error', 'warning': type === 'warning'}">
+  <span class="message">{{ message }}</span>
+  <button class="close-btn" (click)="hideToast()">×</button>
+</div>

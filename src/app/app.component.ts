@@ -1,6 +1,8 @@
-import { Component } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterOutlet } from '@angular/router';
+import {ToastService} from "./services/common/toast.service";
+import {ModalService} from "./services/common/modal.service";
 
 @Component({
   selector: 'app-root',
@@ -9,6 +11,35 @@ import { RouterOutlet } from '@angular/router';
   templateUrl: './app.component.html',
   styleUrl: './app.component.css'
 })
-export class AppComponent {
-  title = 'softka-challenge-10-24';
+export class AppComponent implements OnInit {
+  title = 'challenge';
+
+  toast: { message: string, type: 'success' | 'error' | 'warning' } | null = null;
+  showModal = false;
+  modalMessage = '';
+
+  constructor(
+    private toastService: ToastService,
+    private modalService: ModalService
+  ) {}
+
+  onModalConfirm() {
+    this.modalService.confirm();
+    this.showModal = false;
+  }
+
+  onModalCancel() {
+    this.modalService.cancel();
+    this.showModal = false;
+  }
+
+  ngOnInit(): void {
+    this.toastService.getToast().subscribe(toast => {
+      this.toast = toast;
+    });
+    this.modalService.openModal$.subscribe(message => {
+      this.modalMessage = message;
+      this.showModal = true;
+    });
+  }
 }

@@ -7,8 +7,10 @@
 
 `ng build`
 
+Generar test con jasmin
 `ng test`
 
+Generar test con jest
 `npx test`
 
 ### NOTA: Dentro del servidor se intaló el paquete:

@@ -1,0 +1,19 @@
+$light-gray: #F4F6F9;
+$dark-gray: #ccc;
+$light-yellow: #FCE7A8;
+$dark-yellow: #F5DF66;
+$hover-gray: #e3e3e3;
+$basic-white: #fff;
+$text-gray: #4F5351;
+$error-color: #EB5757;
+
+:root {
+  --light-gray: #{$light-gray};
+  --dark-gray: #{$dark-gray};
+  --light-yellow: #{$light-yellow};
+  --dark-yellow: #{$dark-yellow};
+  --basic-white: #{$basic-white};
+  --hover-gray: #{$hover-gray};
+  --text-gray: #{$text-gray};
+  --error-color: #{$error-color};
+}

@@ -1,0 +1,371 @@
+@import "variables";
+
+body {
+  font-family: 'Trebuchet MS', sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: var(--light-gray);
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: var(--text-gray);
+}
+
+html, body {
+  height: 100%;
+}
+
+.container {
+  padding: 20px;
+  background-color: var(--basic-white);
+  border-radius: 2px;
+  width: auto;
+  height: 400px;
+  max-width: 1200px;
+  min-width: 700px;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+.label-container {
+  text-align: center;
+}
+
+.label-list {
+  font-weight: bold;
+}
+
+.search-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+
+  @media screen and (max-width: 768px) {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+
+    .search-input {
+      width: 100%;
+    }
+
+    .primary-btn {
+      width: 100%;
+    }
+  }
+}
+
+.search-input {
+  width: 200px;
+  padding: 10px;
+  font-size: 14px;
+  border: 2px solid var(--dark-gray);
+  border-radius: 8px;
+}
+
+.btn-action {
+  font-size: 12px;
+  font-weight: bold;
+  height: 40px;
+  min-width: 70px;
+  border-radius: 5px;
+  border: none;
+}
+
+.primary-btn {
+  @extend .btn-action;
+  background-color: var(--dark-yellow);
+  cursor: pointer;
+  color: var(--text-gray);
+
+  &:hover {
+    background-color: var(--light-yellow);
+  }
+}
+
+.custom-table-container {
+  flex: 1;
+  overflow-x: auto;
+  max-width: 100%;
+}
+
+.custom-table {
+  width: 100%;
+  border-collapse: collapse;
+  background-color: var(--basic-white);
+
+  th, td {
+    padding: 12px 15px;
+    text-align: left;
+    border-bottom: 1px solid var(--light-gray);
+    white-space: nowrap;
+  }
+
+  th {
+    background-color: var(--light-gray);
+    font-weight: bold;
+    font-size: 13px;
+  }
+
+  td {
+    font-size: 13px;
+  }
+
+  tbody tr:hover {
+    background-color: var(--hover-gray);
+  }
+}
+
+.logo-img {
+  width: 40px;
+  object-fit: cover;
+}
+
+.results {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 20px;
+  font-size: 12px;
+}
+
+.page-size-select {
+  padding: 5px;
+  font-size: 12px;
+  width: 60px;
+  border-radius: 5px;
+  border: 2px solid var(--dark-gray);
+}
+
+.action-menu {
+  position: relative;
+  display: inline-block;
+}
+
+.menu-btn {
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: 20px;
+  padding: 0;
+}
+
+.dot {
+  display: block;
+  width: 4px;
+  height: 4px;
+  background-color: var(--text-gray);
+  border-radius: 50%;
+  margin: 2px auto;
+}
+
+.menu-content {
+  display: none;
+  position: absolute;
+  background-color: white;
+  border: 1px solid var(--light-gray);
+  box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+  z-index: 1000;
+  top: 100%;
+  right: 0;
+}
+
+.menu-content.show {
+  display: block;
+}
+
+.menu-content button {
+  display: block;
+  width: 100%;
+  padding: 8px 12px;
+  border: none;
+  background: none;
+  text-align: left;
+  cursor: pointer;
+}
+
+.menu-content button:hover {
+  background-color: var(--light-gray);
+}
+
+.container-form {
+  padding: 20px;
+  background-color: var(--basic-white);
+  border-radius: 2px;
+  min-width: 700px;
+  display: flex;
+  flex-direction: column;
+
+  h1 {
+    margin-bottom: 0;
+  }
+
+  hr {
+    border: solid 1px;
+    width: 100%;
+    margin-bottom: 20px;
+  }
+
+  .form-container {
+    margin-bottom: 30px;
+  }
+
+  .title-div {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding-bottom: 15px;
+  }
+
+  .title-div h1 {
+    margin: 0;
+    margin-left: 10px;
+  }
+
+  .back-btn {
+    background: none;
+    border: none;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0;
+    font-size: 24px;
+    color: var(--text-gray);
+
+    svg {
+      fill: var(--text-gray);
+    }
+
+    &:hover svg {
+      fill: var(--dark-gray);
+    }
+  }
+
+  .form-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 15px;
+
+    @media screen and (max-width: 768px) {
+      grid-template-columns: 1fr;
+    }
+  }
+
+  .form-group {
+    display: flex;
+    flex-direction: column;
+
+    label {
+      margin-bottom: 5px;
+      font-weight: bold;
+      font-size: 12px;
+    }
+
+    input {
+      padding: 10px;
+      border: 1px solid var(--dark-gray);
+      border-radius: 5px;
+      font-size: 13px;
+
+      &.invalid {
+        border-color: var(--error-color);
+        border-width: 2px;
+        border-style: solid;
+      }
+    }
+  }
+
+  .button-container {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 15px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+
+    @media screen and (max-width: 768px) {
+      grid-template-columns: 1fr;
+    }
+
+    button {
+      padding: 10px;
+      border: none;
+      border-radius: 5px;
+      font-size: 14px;
+      cursor: pointer;
+
+      &.reset-btn {
+        @extend .btn-action;
+        background-color: var(--light-gray);
+        color: var(--text-gray);
+        margin-right: 20px;
+
+        &:hover {
+          background-color: var(--hover-gray);
+        }
+      }
+
+      &.submit-btn {
+        @extend .primary-btn;
+        margin-left: 20px;
+      }
+    }
+
+    .reset-btn {
+      justify-self: end;
+    }
+
+    .submit-btn {
+      justify-self: start;
+    }
+  }
+
+  .text-danger {
+    color: var(--error-color);
+    font-weight: 500;
+    font-size: 12px;
+    line-height: 14.22px;
+    margin-top: 5px;
+  }
+}
+
+.tooltip-icon {
+  position: relative;
+  display: inline-block;
+  cursor: pointer;
+  margin-left: 5px;
+  width: 16px;
+  height: 16px;
+  background-image: url('/assets/icons/info.png');
+  background-size: cover;
+  background-repeat: no-repeat;
+  top: 3px;
+}
+
+@media screen and (max-width: 768px) {
+  .custom-table {
+    th, td {
+      font-size: 12px;
+      padding: 8px 10px;
+    }
+
+    .action-menu {
+      width: 100%;
+    }
+
+    .menu-btn {
+      font-size: 16px;
+    }
+
+    .container-form {
+      min-width: auto;
+
+      .form-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+  }
+}

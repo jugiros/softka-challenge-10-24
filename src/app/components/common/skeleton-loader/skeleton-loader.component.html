@@ -1,22 +1,18 @@
-<table class="custom-table">
+<table class="skeleton-table">
   <thead>
   <tr>
-    <th>Logo</th>
-    <th>Nombre del producto</th>
-    <th>Descripción</th>
-    <th>Fecha de liberación</th>
-    <th>Fecha de revisión</th>
-    <th></th>
+    <th class="skeleton-header"></th>
+    <th class="skeleton-header"></th>
+    <th class="skeleton-header"></th>
+    <th class="skeleton-header"></th>
   </tr>
   </thead>
   <tbody>
-  <tr *ngFor="let i of [].constructor(rowCount)">
-    <td><div class="skeleton skeleton-logo"></div></td>
-    <td><div class="skeleton skeleton-text"></div></td>
-    <td><div class="skeleton skeleton-text"></div></td>
-    <td><div class="skeleton skeleton-date"></div></td>
-    <td><div class="skeleton skeleton-date"></div></td>
-    <td><div class="skeleton skeleton-menu"></div></td>
+  <tr *ngFor="let i of [].constructor(rowCount)" class="skeleton-row">
+    <td class="skeleton-cell"></td>
+    <td class="skeleton-cell"></td>
+    <td class="skeleton-cell"></td>
+    <td class="skeleton-cell"></td>
   </tr>
   </tbody>
 </table>

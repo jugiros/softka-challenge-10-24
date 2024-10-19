@@ -8,11 +8,12 @@ import { environment } from "../../environments/environment";
 import { ToastService } from "../../services/common/toast.service";
 import {ModalService} from "../../services/common/modal.service";
 import {ProductDataService} from "../../services/product/productData.service";
+import {SkeletonLoaderComponent} from "../common/skeleton-loader/skeleton-loader.component";
 
 @Component({
   selector: 'app-product-list',
   standalone: true,
-  imports: [CommonModule, FormsModule],
+  imports: [CommonModule, FormsModule, SkeletonLoaderComponent],
   templateUrl: './product-list.component.html',
   styleUrls: ['./product-list.component.css']
 })

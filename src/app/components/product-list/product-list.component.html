@@ -11,7 +11,7 @@
 
 <div class="container">
   <div class="custom-table-container">
-    <table *ngIf="paginatedProducts.length > 0" class="custom-table">
+    <table *ngIf="paginatedProducts.length > 0 else skeletonLoader" class="custom-table">
       <thead>
       <tr>
         <th>Logo</th>
@@ -54,6 +54,10 @@
       </tr>
       </tbody>
     </table>
+    <ng-template #skeletonLoader>
+      <app-skeleton-loader [rowCount]="5"></app-skeleton-loader>
+    </ng-template>
+
     <div class="label-container">
       <label *ngIf="paginatedProducts.length === 0" class="label-list">No se tiene datos a visualizar</label>
     </div>

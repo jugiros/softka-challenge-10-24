@@ -9,6 +9,8 @@
 
 `ng test`
 
+`npx test`
+
 ### NOTA: Dentro del servidor se intaló el paquete:
 
 `npm install cors`

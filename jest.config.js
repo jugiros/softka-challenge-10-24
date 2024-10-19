@@ -6,6 +6,7 @@ module.exports = {
   coverageDirectory: 'coverage',
   coverageReporters: ['html', 'lcov', 'text'],
   moduleNameMapper: {
-    '^@/(.*)$': '<rootDir>/src/$1'
-  }
+    '^@/(.*)$': '<rootDir>/src/$1',
+  },
+  testMatch: ['**/?(*.)+(test).ts'],
 };

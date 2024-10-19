@@ -1,0 +1,42 @@
+.skeleton {
+  background-color: var(--light-gray);
+  border-radius: 4px;
+}
+
+.skeleton-logo {
+  width: 40px;
+  height: 40px;
+}
+
+.skeleton-text {
+  height: 16px;
+  width: 100%;
+  margin: 5px 0;
+}
+
+.skeleton-date {
+  height: 16px;
+  width: 80%;
+}
+
+.skeleton-menu {
+  width: 50px;
+  height: 30px;
+  border-radius: 5px;
+}
+
+@keyframes pulse {
+  0% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.5;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+.skeleton {
+  animation: pulse 1.5s infinite;
+}

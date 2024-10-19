@@ -1,19 +1,15 @@
 @import "variables";
 
-body {
+html, body {
+  height: 100%;
   font-family: 'Trebuchet MS', sans-serif;
   margin: 0;
   padding: 0;
   background-color: var(--light-gray);
-  height: 100vh;
+  color: var(--text-gray);
   display: flex;
   justify-content: center;
   align-items: center;
-  color: var(--text-gray);
-}
-
-html, body {
-  height: 100%;
 }
 
 .container {
@@ -48,10 +44,7 @@ html, body {
     align-items: flex-start;
     gap: 10px;
 
-    .search-input {
-      width: 100%;
-    }
-
+    .search-input,
     .primary-btn {
       width: 100%;
     }
@@ -73,12 +66,12 @@ html, body {
   min-width: 70px;
   border-radius: 5px;
   border: none;
+  cursor: pointer;
 }
 
 .primary-btn {
   @extend .btn-action;
   background-color: var(--dark-yellow);
-  cursor: pointer;
   color: var(--text-gray);
 
   &:hover {
@@ -130,65 +123,65 @@ html, body {
   align-items: center;
   margin-top: 20px;
   font-size: 12px;
-}
 
-.page-size-select {
-  padding: 5px;
-  font-size: 12px;
-  width: 60px;
-  border-radius: 5px;
-  border: 2px solid var(--dark-gray);
+  .page-size-select {
+    padding: 5px;
+    font-size: 12px;
+    width: 60px;
+    border-radius: 5px;
+    border: 2px solid var(--dark-gray);
+  }
 }
 
 .action-menu {
   position: relative;
   display: inline-block;
-}
 
-.menu-btn {
-  background: none;
-  border: none;
-  cursor: pointer;
-  font-size: 20px;
-  padding: 0;
-}
+  .menu-btn {
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-size: 20px;
+    padding: 0;
+  }
 
-.dot {
-  display: block;
-  width: 4px;
-  height: 4px;
-  background-color: var(--text-gray);
-  border-radius: 50%;
-  margin: 2px auto;
-}
+  .dot {
+    display: block;
+    width: 4px;
+    height: 4px;
+    background-color: var(--text-gray);
+    border-radius: 50%;
+    margin: 2px auto;
+  }
 
-.menu-content {
-  display: none;
-  position: absolute;
-  background-color: white;
-  border: 1px solid var(--light-gray);
-  box-shadow: 0 2px 5px rgba(0,0,0,0.2);
-  z-index: 1000;
-  top: 100%;
-  right: 0;
-}
+  .menu-content {
+    display: none;
+    position: absolute;
+    background-color: white;
+    border: 1px solid var(--light-gray);
+    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+    z-index: 1000;
+    top: 100%;
+    right: 0;
 
-.menu-content.show {
-  display: block;
-}
+    &.show {
+      display: block;
+    }
 
-.menu-content button {
-  display: block;
-  width: 100%;
-  padding: 8px 12px;
-  border: none;
-  background: none;
-  text-align: left;
-  cursor: pointer;
-}
+    button {
+      display: block;
+      width: 100%;
+      padding: 8px 12px;
+      border: none;
+      background: none;
+      text-align: left;
+      cursor: pointer;
 
-.menu-content button:hover {
-  background-color: var(--light-gray);
+      &:hover {
+        background-color: var(--light-gray);
+      }
+    }
+  }
 }
 
 .container-form {
@@ -218,11 +211,11 @@ html, body {
     align-items: center;
     justify-content: center;
     padding-bottom: 15px;
-  }
 
-  .title-div h1 {
-    margin: 0;
-    margin-left: 10px;
+    h1 {
+      margin: 0;
+      margin-left: 10px;
+    }
   }
 
   .back-btn {

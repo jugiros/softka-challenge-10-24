@@ -1,0 +1,68 @@
+<div class="search-container">
+  <input
+    type="text"
+    placeholder="Search..."
+    class="search-input"
+    [(ngModel)]="searchTerm"
+    (ngModelChange)="onSearchChange()"
+  />
+  <button type="button" class="primary-btn" (click)="createProduct()">Agregar</button>
+</div>
+
+<div class="container">
+  <div class="custom-table-container">
+    <table *ngIf="paginatedProducts.length > 0" class="custom-table">
+      <thead>
+      <tr>
+        <th>Logo</th>
+        <th>Nombre del producto</th>
+        <th>
+          Descripción
+          <span class="tooltip-icon"></span>
+        </th>
+        <th>
+          Fecha de liberación
+          <span class="tooltip-icon"></span>
+        </th>
+        <th>
+          Fecha de reestructuración
+          <span class="tooltip-icon"></span>
+        </th>
+        <th></th>
+      </tr>
+      </thead>
+      <tbody>
+      <tr *ngFor="let product of paginatedProducts">
+        <td><img [src]="product.logo" alt="Logo" class="logo-img" /></td>
+        <td>{{ product.name }}</td>
+        <td>{{ product.description }}</td>
+        <td>{{ product.date_release | date: 'dd/MM/yyyy' }}</td>
+        <td>{{ product.date_revision | date: 'dd/MM/yyyy' }}</td>
+        <td>
+          <div class="action-menu">
+            <button class="menu-btn" (click)="toggleMenu(product.id)">
+              <span class="dot"></span>
+              <span class="dot"></span>
+              <span class="dot"></span>
+            </button>
+            <div class="menu-content" [ngClass]="{'show': selectedProductId === product.id}">
+              <button (click)="editProduct(product)">Editar</button>
+              <button (click)="deleteProduct(product)">Eliminar</button>
+            </div>
+          </div>
+        </td>
+      </tr>
+      </tbody>
+    </table>
+    <div class="label-container">
+      <label *ngIf="paginatedProducts.length === 0" class="label-list">No se tiene datos a visualizar</label>
+    </div>
+  </div>
+
+  <div class="results">
+    <span>{{ paginatedProducts.length }} Resultados</span>
+    <select [(ngModel)]="pageSize" class="page-size-select" (change)="onPageSizeChange($event)">
+      <option *ngFor="let size of pageSizes" [value]="size">{{ size }}</option>
+    </select>
+  </div>
+</div>
